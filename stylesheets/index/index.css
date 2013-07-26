@@ -1,0 +1,211 @@
+
+/* Getting the new tags to behave */
+article, footer, header, section { display: block; }
+
+/* Left & Right alignment */
+
+.left { float:left;}
+.right { float:right;}
+.wrapper {width:100%; overflow:hidden;}
+
+/* Global properties ======================================================== */
+
+body{ background: url(/index/bg.jpg);
+	margin: 0, auto;
+	background-repeat:repeat-y;
+	background-position:right;
+}
+
+/* Global Structure ============================================================= */
+
+.main {	margin: 0 auto;	width: 960px; }
+
+/* ============================= main layout ====================== */
+
+a{ color:#7f7f7f; text-decoration: underline; outline:none}
+a:hover{ text-decoration: none}
+
+h1 {
+	color:rgba(255,0,0,0.5);
+	font:80px Helvetica, 
+	Sans-serif;
+	letter-spacing:-5px;
+	text-shadow:-3px -3px rgba(0,0,255,0.5);
+	top: -40px;
+	position: relative;
+}
+
+h2 { 
+	color:rgb(77, 43, 63); 
+	font-weight:400;
+	font-size:61px; 
+	line-height:1.2em; 
+	padding:0 0 0px 0; 
+	letter-spacing:-5px; 
+	margin-left:-5px;
+	position: relative;
+	top: 15px;
+}
+h2 strong{ font-weight:700; color:rgb(99, 68, 122);}
+h3{ font-size:30px; line-height:1.2em; color:#7532a9; padding:0 0 8px 0; font-weight:400; letter-spacing:-2px;}
+h4 { 
+	float:left; 
+	width:400px; 
+	top : -45px;
+	font-size:35px; 
+	color:#7f7f7f; 
+	line-height:1.2em; 
+	font-weight:100; 
+	letter-spacing:2px; 
+	position: relative;
+	text-align: center;
+	
+}
+h5 {
+	width:400px; 
+	text-align: center;
+	font-size: 15px;
+	position:relative;
+	top:-85px;
+}
+h6 {
+	width:400px; 
+	text-align: center;
+	font-size: 15px;
+	position:relative;
+	top:-172px;
+}
+p {
+	padding-bottom:10px;
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;;
+	font-size: 17px;
+	color: rgb(42, 32, 49);
+}
+
+#link1 ,#link1:hover {
+	font-weight: 300;
+	text-decoration: none;
+	cursor: pointer;
+	color: rgb(42, 32, 49);
+}
+
+#issue{
+	position: relative;
+	right: -107px;
+}
+
+/* ============================= header ====================== */
+header{ height:100px;}
+nav {
+	display: inline;
+	word-spacing: 20px;
+	color: rgb(185, 177, 177);
+	font-weight: bold;
+	font-family: arial, sans-serif;
+	text-decoration: none;
+	position: relative;
+	left: -187px;
+}
+
+nav2 {
+	word-spacing: 0px;
+}
+a {
+	text-decoration: none;
+	color: rgb(185, 177, 177);
+}
+a:hover{
+	color: #fff
+}
+
+/* ============================= content ====================== */
+
+.box{background: transparent;
+	padding:10px 46px 10px 20px; 
+	overflow:hidden;
+	padding-top:0px;
+}
+
+#content{ padding-bottom:0px;}
+
+.pad_left1{ padding-left:90px}
+.pad_bot1{ padding-bottom:5px;}
+.pad_bot2{ padding-bottom:10px;}
+.marg_right1{ margin-right:40px}
+
+.color1{ color:#7532a9}
+.color2{ color:#7532a9}
+
+.address{ width:97px; float:left;}
+
+/* ============================= footer ====================== */
+
+footer { height:172px; color:rgb(73, 119, 80);}
+footer a{ color:#7532a9; text-decoration:none}
+footer a:hover{ text-decoration:underline}
+
+.line1{ background:url(/index/line_vert1.gif) 435px 0 repeat-y; height:80%;}
+
+.icons { 
+	background: transparent;
+	float:left; 
+	width: 380px; 
+	height: 135px;
+	padding-right:70px
+	top: -105px;
+	position: relative;
+}
+
+#gitimg {
+	width: 10%;
+	height: 26%;
+	position:relative;
+	top: -139px;
+	right: -290px;
+}
+#gitimg2 {
+	width: 10%;
+	height: 26%;
+	position:relative;
+	top: -240px;
+	right: -290px;
+}
+
+#gitimg3 {
+	width: 10%;
+	height: 26%;
+	position:relative;
+	top: -139px;
+	right: -408px;
+}
+
+#issue-mail{
+	right: -133px;
+}
+
+#icons{ 
+	padding: 0px 0 0 0; 
+	top: -60px;
+	position: relative;
+}
+#icons li{ float:left; padding-right:6px;}
+
+.col1, .col2, .col3, .cols { float:left;}
+
+.col1{ width:400px;}
+.cols{ width:260px;}
+
+.col2{ width:580px;}
+
+.header-box {
+	left : 0;
+	height: 30px;
+	border-color: #000;
+	background-color: #2d2d2d;
+	background-repeat: repeat-x;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: block;
+	font: 13px/27px Arial,sans-serif
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC">
+<html>
+    <head>
+        <title>Profile Page</title>
+        <link type="text/css" rel="stylesheet" href="/unsubscribe/unsubscribe.css" />
+    </head>
+    <body>
+        <div id="hdbox" class="header-box">
+            <header>
+                <nav>
+                    {% if nickname == "guest" %}
+                    <a href="/">Home</a> <a href="/profile">Profile</a> <a href={{login_url}}>Login</a>
+                    | 
+                    <nav2>You are currently not logged in.</nav2>
+                    {% else %}
+                    <a href="/">Home</a> <a href="/profile">Profile</a> <a href={{logout_url}}>Logout</a>
+                    | 
+                    <nav2>You are logged in as {{nickname}}</nav2>
+                    {% endif %} 
+                </nav>
+            </header>
+            <table>
+                <caption>Subscribed emails</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" class="th">From</th>
+                        <th scope="col"class="th">To</th>
+                        <th scope="col"class="th">Spam too?</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                {% for entry in subscribtions %}
+                    <tr class="trbody">
+                        <td class="td">{{entry['from']}}</td>
+                        <td class="td">{{entry['to']}}</td>
+                        <td class="td">{{entry['spam']}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <h2>Please specify which subscribtion you wish to undo:<br></h2>
+            <form method="post">
+                <input type="email" name="y_mail" class="text-field" placeholder="Yahoo Mail" />
+                <input type="email" name="g_mail" class="text-field" placeholder="Forwarding address" />
+                <input type="submit" value="Unsubscribe" class="button" />
+            </form>
+        </div>
+    </body>
+</html>

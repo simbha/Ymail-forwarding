@@ -1,0 +1,42 @@
+
+body {
+	background: url(/guest/cartman.jpg);
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position:left;
+}
+
+nav {
+	display: inline;
+	word-spacing: 20px;
+	color: rgb(185, 177, 177);
+	font-weight: bold;
+	font-family: arial, sans-serif;
+	text-decoration: none;
+	position: relative;
+	left: 10px;
+}
+
+nav2 {
+	word-spacing: 0px;
+}
+a {
+	text-decoration: none;
+	color: rgb(185, 177, 177);
+}
+a:hover{
+	color: #fff
+}
+
+.header-box {
+	left : 0;
+	height: 30px;
+	border-color: #000;
+	background-color: #2d2d2d;
+	background-repeat: repeat-x;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	display: block;
+	font: 13px/27px Arial,sans-serif
+}

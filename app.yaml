@@ -1,0 +1,30 @@
+application: your-app-id
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /profile
+  login: required
+  static_dir: stylesheets/profile
+
+- url: /guest
+  static_dir: stylesheets/guest
+
+- url: /unsubscribe
+  static_dir: stylesheets/unsubscribe
+
+- url: /.*
+  static_dir: stylesheets/index
+
+- url: /.*
+  script: main.application
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+

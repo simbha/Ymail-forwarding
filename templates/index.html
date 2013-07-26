@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="index/index.css" type="text/css" media="all">
+    </head>
+    <body id="page1">
+        <div id="hdbox" class="header-box">
+            <div class="main">
+                <!--header -->
+                <header>
+                    <nav>
+                        {% if nickname == "guest" %}
+                        <a href="/">Home</a> <a href="/profile">Profile</a> <a href={{login_url}}>Login</a>
+                        | 
+                        <nav2>You are currently not logged in.</nav2>
+                        {% else %}
+                        <a href="/">Home</a> <a href="/profile">Profile</a> <a href={{logout_url}}>Logout</a>
+                        | 
+                        <nav2>You are logged in as {{nickname}}</nav2>
+                        {% endif %}		
+                    </nav>
+                    <h1>Yahoo! Mail Forwarding</h1>
+                </header>
+                <!--header end-->
+                <div class="box">
+                    <!--content -->
+                    <article id="content">
+                        <div class="wrapper pad_bot1">
+                            <section class="col1">
+                                <h2 id="welcom">Hello!</h2>
+                                <p>Yahoo! Mail Forwarding is a free online application
+                                    meant to compensate Yahoo's lack of email forwarding under their free email service.
+                                </p>
+                                <p class="pad_bot1">How it works: you subscribe your email adresses and once in 15 minutes, new emails will be forwarded to your favourite email. </p>
+                            </section>
+                            <section class="col1 pad_left1">
+                                <h2>Subscribing</h2>
+                                <p>First you need to sign in, currently it supports only your <a href={{login_url}} id="link1">Google+ account. Click here to sign in.</a> Once you're authenticated you
+                                    can continue to the <a id="link1" href="/profile">Profile</a> page, where email subscriptions can be added.
+                                </p>
+                            </section>
+                        </div>
+                    </article>
+                    <!--content end-->
+                    <!--footer -->
+                    <footer>
+                        <div class="line1">
+                            <div class="icons">
+                                <h4>Social Networks</h4>
+                                <h5>Follow me on Github @</h5>
+                                <a href="https://github.com/users/follow?target=mihai-varga" class="normaltip" title="@ Github"><img src="images/github.png" id="gitimg" alt=""></a>
+                                <h6>Star it on Github @</h6>
+                                <a href="https://github.com/mihai-varga/Ymail-forwarding/star" class="normaltip" title="Star it @ Github"><img src="images/github.png" id="gitimg2" alt=""></a>
+                            </div>
+                            <div class="icons">
+                                <h4 id="issue">Issues | Suggestions</h4>
+                                <h5 id="issue">Post an issue on Github @ </h5>
+                                <a href="https://github.com/mihai-varga/Ymail-forwarding/issues/new" title="Issue @ Github"><img src="images/github.png" id="gitimg3" alt=""></a>
+                                <h6 id="issue-mail"> Send me an email @ mihai.mv13@gmail.com</h6>
+                            </div>
+                        </div>
+                    </footer>
+                    <!--footer end-->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
