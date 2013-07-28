@@ -1,6 +1,9 @@
-import webapp2, os, jinja2, urllib, sys, cgi
+import webapp2, os, jinja2, urllib, sys, cgi, imaplib
 from google.appengine.api import users
+from google.appengine.api import mail
 sys.path.append('./models')
+sys.path.append('./gaemechanize2')
+from _mechanize import *
 import models
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -68,11 +71,11 @@ class CheckDB(webapp2.RequestHandler):
         #user2 = models.MailActivity(id="test2")
         #user1.put()
         #user2.put()
-        mail_query = models.MailActivity.query(models.MailActivity.id=='test3')
+        mail_query = models.MailActivity.query(models.MailActivity.id==users.get_current_user())
         self.response.write('<html>')
         for entry in mail_query:
             #resp = 'from ' + entry.y_mail + ' to ' + entry.g_mail
-            resp = 'id ' + entry.id + ' date: ' + str(entry.date)
+            resp = 'id ' + entry.id.nickname() + ' date: ' + str(entry.date)
             entry.key.delete()
             self.response.write('<div> %s </div>'% (resp))
         self.response.write('</html>')
@@ -126,6 +129,20 @@ class Unsubscribe(webapp2.RequestHandler):
                 subscrib.key.delete()
         self.get()
 
+class MailSender(webapp2.RequestHandler):
+    def get(self):
+        #test = MailHandler()
+        br = Browser()
+        login_url = 'https://login.yahoo.com/config/login_verify2?&.src=ym&.intl=us'
+        br.set_handle_robots(False)
+        br.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.2 Safari/537.36')]
+        br.open(login_url)
+        br.select_form(nr=0)
+        br.form['login'] = 'mihai_mv13@yahoo.com'
+        br.form['passwd'] = '' #####
+        response = br.submit()
+        self.response.write(br.response().get_data())
+
                 
 
 
@@ -136,5 +153,6 @@ application = webapp2.WSGIApplication([
     ('/db', CheckDB),
     ('/guest', Guest),
     ('/unsubscribe', Unsubscribe),
+    ('/mailsender', MailSender),
     ], debug = True)
 

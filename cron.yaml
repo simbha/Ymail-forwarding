@@ -1,0 +1,4 @@
+cron:
+- description: mail forwarder
+  url: /mailsender
+  schedule: every 1 minutes

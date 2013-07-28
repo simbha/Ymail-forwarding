@@ -2,7 +2,7 @@ application: your-app-id
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: true
+threadsafe: false
 
 handlers:
 
@@ -16,6 +16,9 @@ handlers:
 - url: /unsubscribe
   static_dir: stylesheets/unsubscribe
 
+- url: /mailsender
+  script: main.application
+
 - url: /.*
   static_dir: stylesheets/index
 
@@ -26,5 +29,7 @@ libraries:
 - name: webapp2
   version: latest
 - name: jinja2
+  version: latest
+- name: ssl
   version: latest
 
